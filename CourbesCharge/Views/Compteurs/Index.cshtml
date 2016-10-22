@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CourbesCharge.Models.Compteur>
+
+@{
+    ViewBag.Title = "Accueil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section OptCSS {
+    <link href="@Url.Content("~/Content/Datatables/datatables.css")" rel="stylesheet" type="text/css" />
+}
+
+@section OptJS
+{
+    @Scripts.Render("~/Content/Datatables/datatables.js")
+}
+
+<br />
+<h2>Liste des compteurs</h2>
+<p class="lead">Tous les compteurs installés à des clients ONE</p>
+<br/>
+<table id="Table" class="table display">
+    <thead>
+        <tr>
+            <th>
+                Numéro du compteur
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marque)
+            </th>
+            <th>
+                Série
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Description)*@
+                Client
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCompteur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serie)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Courbes", new { IdCompteur = item.IdCompteur }, new { @class = "btn btn-info" })
+            </td>
+            <td>
+                @Html.ActionLink("Modifier", "Edit", new { id = item.IdCompteur }, new { @class = "btn btn-warning" }) |
+
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.IdCompteur }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+    </tbody>
+
+</table>
+
+<p>
+    @Html.ActionLink("Creer un nouveau compteur", "Create")
+</p>
+
+<script>
+    $(document).ready(function () {
+        $('#Table').DataTable();
+    });
+</script>

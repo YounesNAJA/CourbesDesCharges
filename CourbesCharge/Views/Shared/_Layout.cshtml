@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office National de l'Electricité - @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("OptCSS", required: false)
+    @RenderSection("OptJS", required: false)
+    @Scripts.Render("~/Scripts/highcharts.js")
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Office National de l'Electricité", "Index", "Compteurs", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Accueil", "Index", "Compteurs")</li>
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="true">
+                            Clients<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Gérer les Clients", "Index", "Clients")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Gérer les Catégories de Client", "Index", "CategorieClients")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="true">
+                            Contrats<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Gérer les compteurs", "Index", "Compteurs")</li>
+                            <li>@Html.ActionLink("Gérer les Installations", "Index", "Installations")</li>
+                            <li>@Html.ActionLink("Gérer les Contrats", "Index", "Contrats")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="true">
+                            Courbes de charge<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Importer un fichier de données", "Sendfile", "Consommations")</li>
+                            <li>@Html.ActionLink("Visualiser une courbe", "Index", "Compteurs")</li>
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Office National d'Electricité</p>
+    </footer>
+</div>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

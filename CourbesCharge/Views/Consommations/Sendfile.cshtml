@@ -1,0 +1,80 @@
+﻿@model CourbesCharge.Models.Consommation
+
+@{
+    ViewBag.Title = "UploadFile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section OptCSS {
+    <link href="@Url.Content("~/Content/Datatables/datatables.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/fileinput/css/fileinput.css")" rel="stylesheet" type="text/css" />
+}
+
+@section OptJS
+{
+    @Scripts.Render("~/Content/fileinput/js/plugins/canvas-to-blob.js")
+    @Scripts.Render("~/Content/fileinput/js/plugins/sortable.js")
+    @Scripts.Render("~/Content/fileinput/js/plugins/purify.js")
+    @Scripts.Render("~/Content/fileinput/js/fileinput.js")
+    @Scripts.Render("~/Content/fileinput/js/locales/fr.js")
+    @Scripts.Render("~/Content/fileinput/themes/fa/theme.js")
+}
+
+<script>
+    paceOptions = {
+        // Disable the 'elements' source
+        elements: false,
+
+        // Only show the progress on regular and ajax-y page navigation,
+        // not every request
+        restartOnRequestAfter: false
+    }
+</script>
+
+<br />
+<h2>Envoie de fichier de données</h2>
+<br />
+
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Informations</h3>
+    </div>
+    <div class="panel-body">
+        <li>Le fichier doit avoir l'extension : <strong><i>.xls</i></strong> ou <strong><i>.xlsx</i></strong></li>
+        <li>Les tableaux en bas du graphe les valeurs maximales et minimales des puissances actives et réactives</li>
+    </div>
+</div>
+
+<br />
+
+@using (Html.BeginForm("Import", "Consommations", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    if (!String.IsNullOrEmpty(ViewBag.Error))
+    {
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            @Html.Raw(ViewBag.Error)
+        </div>
+    }
+
+    <label class="control-label">Choisissez un fichier</label>
+    <input id="input-gly" name="ExcelFile" type="file" class="file-loading">
+    <div id="errorBlock" class="help-block">@ViewBag.Error</div>
+   
+}
+
+<script>
+    $(document).on('ready', function() {
+        $("#input-gly")
+            .fileinput({
+                'language': 'fr',
+                'allowedPreviewTypes': null,
+                'previewIcon': true,
+                'allowedFileExtensions': ['xlsx', 'xls'],
+                'showPreview': false,
+                'maxFileSize': 2048,
+                msgInvalidFileExtension: "Extension invalide"
+            });
+    });
+</script>

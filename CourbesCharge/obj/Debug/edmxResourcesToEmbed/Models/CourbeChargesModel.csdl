@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CourbeChargeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CategorieClient">
+    <Key>
+      <PropertyRef Name="IdCategorie" />
+    </Key>
+    <Property Name="IdCategorie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomCategorie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Client_IdCategorie" FromRole="CategorieClient" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="IdClient" />
+    </Key>
+    <Property Name="IdClient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Representant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Siteweb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ClientDepuis" Type="DateTime" Precision="3" />
+    <Property Name="IdCategorie" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CategorieClient" Relationship="Self.FK_Client_IdCategorie" FromRole="Client" ToRole="CategorieClient" />
+    <NavigationProperty Name="Contrat" Relationship="Self.FK_Contrat_IdClient" FromRole="Client" ToRole="Contrat" />
+  </EntityType>
+  <EntityType Name="Compteur">
+    <Key>
+      <PropertyRef Name="IdCompteur" />
+    </Key>
+    <Property Name="IdCompteur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Marque" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Serie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Consommation" Relationship="Self.FK_Consommation_IdCcompteur" FromRole="Compteur" ToRole="Consommation" />
+    <NavigationProperty Name="Installation" Relationship="Self.FK_Installation_IdCompteur" FromRole="Compteur" ToRole="Installation" />
+  </EntityType>
+  <EntityType Name="Consommation">
+    <Key>
+      <PropertyRef Name="IdConsommation" />
+    </Key>
+    <Property Name="IdConsommation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateConsommation" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IntervalleCalcul" Type="Int32" Nullable="false" />
+    <Property Name="PuissanceActive" Type="Double" Nullable="false" />
+    <Property Name="PuissanceReactive" Type="Double" Nullable="false" />
+    <Property Name="IdCompteur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Compteur" Relationship="Self.FK_Consommation_IdCcompteur" FromRole="Consommation" ToRole="Compteur" />
+  </EntityType>
+  <EntityType Name="Contrat">
+    <Key>
+      <PropertyRef Name="IdContrat" />
+    </Key>
+    <Property Name="IdContrat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateContrat" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ReferenceContrat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdClient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Contrat_IdClient" FromRole="Contrat" ToRole="Client" />
+    <NavigationProperty Name="Installation" Relationship="Self.FK_Installation_IdContrat" FromRole="Contrat" ToRole="Installation" />
+  </EntityType>
+  <EntityType Name="Installation">
+    <Key>
+      <PropertyRef Name="IdInstallation" />
+    </Key>
+    <Property Name="IdInstallation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateAmenagement" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdCompteur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdContrat" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Compteur" Relationship="Self.FK_Installation_IdCompteur" FromRole="Installation" ToRole="Compteur" />
+    <NavigationProperty Name="Contrat" Relationship="Self.FK_Installation_IdContrat" FromRole="Installation" ToRole="Contrat" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="IdUtilisateur" />
+    </Key>
+    <Property Name="IdUtilisateur" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Role" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Client_IdCategorie">
+    <End Role="CategorieClient" Type="Self.CategorieClient" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategorieClient">
+        <PropertyRef Name="IdCategorie" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="IdCategorie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contrat_IdClient">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Contrat" Type="Self.Contrat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="Contrat">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consommation_IdCcompteur">
+    <End Role="Compteur" Type="Self.Compteur" Multiplicity="1" />
+    <End Role="Consommation" Type="Self.Consommation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compteur">
+        <PropertyRef Name="IdCompteur" />
+      </Principal>
+      <Dependent Role="Consommation">
+        <PropertyRef Name="IdCompteur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installation_IdCompteur">
+    <End Role="Compteur" Type="Self.Compteur" Multiplicity="1" />
+    <End Role="Installation" Type="Self.Installation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compteur">
+        <PropertyRef Name="IdCompteur" />
+      </Principal>
+      <Dependent Role="Installation">
+        <PropertyRef Name="IdCompteur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installation_IdContrat">
+    <End Role="Contrat" Type="Self.Contrat" Multiplicity="1" />
+    <End Role="Installation" Type="Self.Installation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contrat">
+        <PropertyRef Name="IdContrat" />
+      </Principal>
+      <Dependent Role="Installation">
+        <PropertyRef Name="IdContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CourbeChargeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CategorieClient" EntityType="Self.CategorieClient" />
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="Compteur" EntityType="Self.Compteur" />
+    <EntitySet Name="Consommation" EntityType="Self.Consommation" />
+    <EntitySet Name="Contrat" EntityType="Self.Contrat" />
+    <EntitySet Name="Installation" EntityType="Self.Installation" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" />
+    <AssociationSet Name="FK_Client_IdCategorie" Association="Self.FK_Client_IdCategorie">
+      <End Role="CategorieClient" EntitySet="CategorieClient" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contrat_IdClient" Association="Self.FK_Contrat_IdClient">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Contrat" EntitySet="Contrat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consommation_IdCcompteur" Association="Self.FK_Consommation_IdCcompteur">
+      <End Role="Compteur" EntitySet="Compteur" />
+      <End Role="Consommation" EntitySet="Consommation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installation_IdCompteur" Association="Self.FK_Installation_IdCompteur">
+      <End Role="Compteur" EntitySet="Compteur" />
+      <End Role="Installation" EntitySet="Installation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installation_IdContrat" Association="Self.FK_Installation_IdContrat">
+      <End Role="Contrat" EntitySet="Contrat" />
+      <End Role="Installation" EntitySet="Installation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

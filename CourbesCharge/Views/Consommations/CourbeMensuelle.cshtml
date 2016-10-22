@@ -1,0 +1,467 @@
+﻿@model IEnumerable<CourbesCharge.Models.Consommation>
+
+@{
+    ViewBag.Title = "TestCharts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section OptCSS {
+    <link href="@Url.Content("~/Content/Datatables/datatables.css")" rel="stylesheet" type="text/css" />
+}
+
+@section OptJS
+{
+    @Scripts.Render("~/Content/Datatables/datatables.js")
+}
+
+
+
+<br />
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Informations</h3>
+    </div>
+    <div class="panel-body">
+        <p>La courbe en bas représente les puissances actives et réactives maximales et minimales du mois</p>
+        <p>Les tableaux en bas du graphe représentent les valeurs maximales et minimales des puissances actives et réactives</p>
+    </div>
+</div>
+
+<br />
+
+
+<br />
+<h1 align="center">Courbe de charge mensuelle pour le client : @ViewBag.Client.Nom</h1>
+<hr />
+<br />
+
+<div id="container" style="width:100%; height:400px;">
+
+</div>
+
+<script>
+    $(function () {
+        $('#container').highcharts({
+
+            chart: {
+                type: 'line'
+            },
+            title: {
+                text: 'Variation mensuelle des puissances actives et réactives du mois : @ViewBag.Month'
+            },
+            xAxis: {
+                @{
+                    int IdLast = Model.Last().IdConsommation;
+                    string Consotime;
+                    // string quoteE = "'";
+                    string quote = "'";
+                    // string Puissances;
+                    string PAct;
+                    string PReact;
+
+                }
+                categories: [@foreach (var conso in Model)
+                             {
+                                 if (conso.IdConsommation == IdLast)
+                                 {
+                                     Consotime = quote + conso.DateConsommation.ToString("ddd dd/MM/yyyy HH:mm") + quote;
+                                 } else
+                                 {
+                                     Consotime = quote + conso.DateConsommation.ToString("ddd dd/MM/yyyy HH:mm") + quote + ", ";
+                                 }
+                                 @Html.Raw(Consotime);
+                             }]
+            },
+            yAxis: {
+                title: {
+                    text: 'Puissances'
+                }
+            },
+            series: [{
+                name: 'Puissance Active Maximale (+)',
+                data: [@foreach (var conso in Model)
+                       {
+                           if (conso.IdConsommation == IdLast)
+                           {
+                               PReact = conso.PuissanceActive.ToString().Replace(',', '.');
+                           } else
+                           {
+                               PReact = conso.PuissanceActive.ToString().Replace(',', '.') + ", ";
+                           }
+                           @Html.Raw(PReact);
+                       }]
+            }, {
+                name: 'Puissance Active Minimale (-)',
+                data: [@foreach (var conso in ViewBag.MinPAs)
+                       {
+                           if (conso.IdConsommation == IdLast)
+                           {
+                               PAct = conso.PuissanceActive.ToString().Replace(',', '.');
+                           } else
+                           {
+                               PAct = conso.PuissanceActive.ToString().Replace(',', '.') + ", ";
+                           }
+                           @Html.Raw(PAct);
+                       }]
+            }, {
+                name: 'Puissance Réactive Maximale (+)',
+                data: [@foreach (var conso in ViewBag.MaxPRs)
+                       {
+                           if (conso.IdConsommation == IdLast)
+                           {
+                               PReact = conso.PuissanceReactive.ToString().Replace(',', '.');
+                           } else
+                           {
+                               PReact = conso.PuissanceReactive.ToString().Replace(',', '.') + ", ";
+                           }
+                           @Html.Raw(PReact);
+                       }]
+            }, {
+                name: 'Puissance Réactive Minimale (-)',
+                data: [@foreach (var conso in ViewBag.MinPRs)
+                       {
+                           if (conso.IdConsommation == IdLast)
+                           {
+                               PReact = conso.PuissanceReactive.ToString().Replace(',', '.');
+                           } else
+                           {
+                               PReact = conso.PuissanceReactive.ToString().Replace(',', '.') + ", ";
+                           }
+                           @Html.Raw(PReact);
+                       }]
+            }]
+        });
+    });
+</script>
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#paTab">Puissance active</a></li>
+    <li><a data-toggle="tab" href="#prTab">Puissance réactive</a></li>
+    <li><a data-toggle="tab" href="#clientD">Détails sur le client</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="paTab" class="tab-pane fade">
+        <table id="Table" class="table table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        Valeur
+                    </th>
+                    <th>
+                        Heure de l'enregistrement
+                    </th>
+                    <th>
+                        Date de l'enregistrement
+                    </th>
+                    <th>
+                        Phase de la journée
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="success">
+                    <td rowspan="3">
+                        <strong>Valeur maximale (+)</strong>
+                    </td>
+                    <td>
+                        @ViewBag.MaxPAHP.PuissanceActive
+                    </td>
+                    <td>
+                        @ViewBag.MaxPAHP.DateConsommation.ToString("HH:mm:ss")
+                    </td>
+                    <td>
+                        @ViewBag.MaxPAHP.DateConsommation.ToString("dddd dd MMM yyyy")
+                    </td>
+                    <td>
+                        Heure de pointe
+                    </td>
+                </tr>
+                <tr class="success">
+                    <td>
+                        @ViewBag.MaxPAHC.PuissanceActive
+                    </td>
+                    <td>
+                        @ViewBag.MaxPAHC.DateConsommation.ToString("HH:mm:ss")
+                    </td>
+                    <td>
+                        @ViewBag.MaxPAHC.DateConsommation.ToString("dddd dd MMM yyyy")
+                    </td>
+                    <td>
+                        Heure creuse
+                    </td>
+                </tr>
+                <tr class="success">
+                    <td>
+                        @ViewBag.MaxPAHPL.PuissanceActive
+                    </td>
+                    <td>
+                        @ViewBag.MaxPAHPL.DateConsommation.ToString("HH:mm:ss")
+                    </td>
+                    <td>
+                        @ViewBag.MaxPAHPL.DateConsommation.ToString("dddd dd MMM yyyy")
+                    </td>
+                    <td>
+                        Heure pleine
+                    </td>
+                </tr>
+                <tr class="danger">
+                    <td rowspan="3">
+                        <strong>Valeur minimale (-)</strong>
+                    </td>
+                    <td>
+                        @ViewBag.MinPAHP.PuissanceActive
+                    </td>
+                    <td>
+                        @ViewBag.MinPAHP.DateConsommation.ToString("HH:mm:ss")
+                    </td>
+                    <td>
+                        @ViewBag.MinPAHP.DateConsommation.ToString("dddd dd MMM yyyy")
+                    </td>
+                    <td>
+                        Heure de pointe
+                    </td>
+                </tr>
+                <tr class="danger">
+                    <td>
+                        @ViewBag.MinPAHC.PuissanceActive
+                    </td>
+                    <td>
+                        @ViewBag.MinPAHC.DateConsommation.ToString("HH:mm:ss")
+                    </td>
+                    <td>
+                        @ViewBag.MinPAHC.DateConsommation.ToString("dddd dd MMM yyyy")
+                    </td>
+                    <td>
+                        Heure creuse
+                    </td>
+                </tr>
+                <tr class="danger">
+                    <td>
+                        @ViewBag.MinPAHPL.PuissanceActive
+                    </td>
+                    <td>
+                        @ViewBag.MinPAHPL.DateConsommation.ToString("HH:mm:ss")
+                    </td>
+                    <td>
+                        @ViewBag.MinPAHPL.DateConsommation.ToString("dddd dd MMM yyyy")
+                    </td>
+                    <td>
+                        Heure pleine
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<div id="prTab" class="tab-pane fade in active">
+    <table id="Table" class="table table-hover">
+        <thead>
+        <tr>
+            <th></th>
+            <th>
+                Valeur
+            </th>
+            <th>
+                Heure de l'enregistrement
+            </th>
+            <th>
+                Date de l'enregistrement
+            </th>
+            <th>
+                Phase de la journée
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="success">
+            <td rowspan="3">
+                <strong>Valeur maximale (+)</strong>
+            </td>
+            <td>
+                @ViewBag.MaxPRHP.PuissanceReactive
+            </td>
+            <td>
+                @ViewBag.MaxPRHP.DateConsommation.ToString("HH:mm:ss")
+            </td>
+            <td>
+                @ViewBag.MaxPRHP.DateConsommation.ToString("dddd dd MMM yyyy")
+            </td>
+            <td>
+                Heure de pointe
+            </td>
+        </tr>
+        <tr class="success">
+            <td>
+                @ViewBag.MaxPRHC.PuissanceReactive
+            </td>
+            <td>
+                @ViewBag.MaxPRHC.DateConsommation.ToString("HH:mm:ss")
+            </td>
+            <td>
+                @ViewBag.MaxPRHC.DateConsommation.ToString("dddd dd MMM yyyy")
+            </td>
+            <td>
+                Heure creuse
+            </td>
+        </tr>
+        <tr class="success">
+            <td>
+                @ViewBag.MaxPRHPL.PuissanceReactive
+            </td>
+            <td>
+                @ViewBag.MaxPRHPL.DateConsommation.ToString("HH:mm:ss")
+            </td>
+            <td>
+                @ViewBag.MaxPRHPL.DateConsommation.ToString("dddd dd MMM yyyy")
+            </td>
+            <td>
+                Heure pleine
+            </td>
+        </tr>
+        <tr class="danger">
+            <td rowspan="3">
+                <strong>Valeur minimale (-)</strong>
+            </td>
+            <td>
+                @ViewBag.MinPRHP.PuissanceReactive
+            </td>
+            <td>
+                @ViewBag.MinPRHP.DateConsommation.ToString("HH:mm:ss")
+            </td>
+            <td>
+                @ViewBag.MinPRHP.DateConsommation.ToString("dddd dd MMM yyyy")
+            </td>
+            <td>
+                Heure de pointe
+            </td>
+        </tr>
+        <tr class="danger">
+            <td>
+                @ViewBag.MinPRHC.PuissanceReactive
+            </td>
+            <td>
+                @ViewBag.MinPRHC.DateConsommation.ToString("HH:mm:ss")
+            </td>
+            <td>
+                @ViewBag.MinPRHC.DateConsommation.ToString("dddd dd MMM yyyy")
+            </td>
+            <td>
+                Heure creuse
+            </td>
+        </tr>
+        <tr class="danger">
+            <td>
+                @ViewBag.MinPRHPL.PuissanceReactive
+            </td>
+            <td>
+                @ViewBag.MinPRHPL.DateConsommation.ToString("HH:mm:ss")
+            </td>
+            <td>
+                @ViewBag.MinPRHPL.DateConsommation.ToString("dddd dd MMM yyyy")
+            </td>
+            <td>
+                Heure pleine
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="clientD" class="tab-pane fade">
+    <table id="TableC" class="table table-hover">
+        <thead>
+        <tr class="info">
+            <th>
+                Nom du client
+            </th>
+            <th>
+                Adresse
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Téléphone
+            </th>
+            <th>
+                Site web
+            </th>
+            <th>
+                Nom du représentant
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                @ViewBag.Client.Nom
+            </td>
+            <td>
+                @ViewBag.Client.Adresse
+            </td>
+            <td>
+                @ViewBag.Client.Email
+            </td>
+            <td>
+                @ViewBag.Client.Telephone
+            </td>
+            <td>
+                @ViewBag.Client.Siteweb
+            </td>
+            <td>
+                @ViewBag.Client.Representant
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table id="TableC" class="table table-hover">
+        <thead>
+        <tr class="info">
+            <th>
+                Date du contrat
+            </th>
+            <th>
+                Référence du contrat
+            </th>
+            <th>
+                Date aménagement du compteur
+            </th>
+            <th>
+                Localité
+            </th>
+            <th>
+                Marque du compteur
+            </th>
+            <th>
+                Série
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                @ViewBag.ClientInfo["Date du Contrat"]
+            </td>
+            <td>
+                @ViewBag.ClientInfo["Reference Contrat"]
+            </td>
+            <td>
+                @ViewBag.ClientInfo["Date Amenag"]
+            </td>
+            <td>
+                @ViewBag.ClientInfo["Localite"]
+            </td>
+            <td>
+                @ViewBag.ClientInfo["Marque"]
+            </td>
+            <td>
+                @ViewBag.ClientInfo["Serie"]
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+@Html.ActionLink("Retour", "Courbes", "Compteurs", new { IdCompteur = ViewBag.IdCompteur }, new { @class = "btn btn-default" })
+<br />

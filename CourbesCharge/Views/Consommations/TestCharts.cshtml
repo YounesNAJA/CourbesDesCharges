@@ -1,0 +1,40 @@
+﻿@model CourbesCharge.Models.Consommation
+
+@{
+    ViewBag.Title = "TestCharts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TestCharts</h2>
+
+<div id="container" style="width:100%; height:400px;">
+
+</div>
+
+<script>
+    $(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'line'
+            },
+            title: {
+                text: 'Variation journalière des puissances actives et réactives'
+            },
+            xAxis: {
+                categories: ['12h00', '12h10', '12h20']
+            },
+            yAxis: {
+                title: {
+                    text: 'Puissances'
+                }
+            },
+            series: [{
+                name: 'Puissance réactive',
+                data: [1, 0, 4]
+            }, {
+                name: 'Puissance active',
+                data: [5, 7, 3]
+            }]
+        });
+    });
+</script>

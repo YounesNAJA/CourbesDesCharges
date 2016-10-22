@@ -1,0 +1,74 @@
+﻿@model IEnumerable<CourbesCharge.Models.Contrat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section OptCSS {
+    <link href="@Url.Content("~/Content/Datatables/datatables.css")" rel="stylesheet" type="text/css" />
+}
+
+@section OptJS
+{
+    @Scripts.Render("~/Content/Datatables/datatables.js")
+}
+
+<br />
+<h2>Liste des contrats</h2>
+<p class="lead">Toutes les contrats effectués avec des clients ONE</p>
+<br />
+
+<p>
+    @Html.ActionLink("Ajouter un nouveau contrat", "Create")
+</p>
+<table id="Table" class="table display">
+    <thead>
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DateContrat)*@
+            Date du contrat
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.ReferenceContrat)*@
+            Référence du contrat
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.Nom)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateContrat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReferenceContrat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Nom)
+            </td>
+            <td>
+                @Html.ActionLink("Modifier", "Edit", new { id = item.IdContrat }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.IdContrat }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<script>
+        $(document).ready(function () {
+            $('#Table').DataTable();
+        });
+</script>

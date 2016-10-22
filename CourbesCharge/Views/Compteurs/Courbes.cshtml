@@ -1,0 +1,218 @@
+﻿@model IEnumerable<CourbesCharge.Models.Compteur>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section OptCSS {
+    <link href="@Url.Content("~/Content/Datatables/datatables.css")" rel="stylesheet" type="text/css" />
+}
+
+@section OptJS
+{
+    @Scripts.Render("~/Content/Datatables/datatables.js")
+    @Scripts.Render("~/Content/dateFormat.js")
+}
+
+<br />
+<h2>Détails sur le compteur</h2>
+<p class="lead">@Model.FirstOrDefault().Marque - @Model.FirstOrDefault().Serie</p>
+<br />
+@if (!String.IsNullOrEmpty(ViewBag.Error))
+{
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        @ViewBag.Error
+    </div>
+}
+<br />
+    <table id="Table" class="table display">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Marque)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Serie)
+                </th>
+                <th id="actions">
+                    Visualisation des courbes de charges
+                </th>
+                <th id="actions">
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marque)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Serie)
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success jourClass" data-toggle="modal" data-target="#Jour" data-whatever="@item.IdCompteur" name="j" id="jourModal">Journalière</button>
+                        <button type="button" class="btn btn-primary moisClass" data-toggle="modal" data-target="#Mois" data-whatever="@item.IdCompteur" name="m" id="moisModal">Mensuelle</button>
+                        <button type="button" class="btn btn-secondary anneeClass" data-toggle="modal" data-target="#Annee" data-whatever="@item.IdCompteur" name="a" id="anneeModal">Annuelle</button>
+                        @*@Html.ActionLink("Journalière", "CourbeJournaliere", "Consommations", new { id = item.IdCompteur }, null) |
+                            @Html.ActionLink("Mensuelle", "Details", new { id = item.IdCompteur }) |
+                            @Html.ActionLink("Annuelle", "Delete", new { id = item.IdCompteur })*@
+                    </td>
+                    <td>
+                        @Html.ActionLink("Modifier", "Edit", new { id = item.IdCompteur }, new { @class = "btn btn-warning" }) |
+                        @Html.ActionLink("Supprimer", "Delete", new { id = item.IdCompteur }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function () {
+            $('#Table').DataTable();
+        });
+
+        $('.jourClass').click(function () {
+            var $button = $(this);
+            var IdCompteur = $button.attr('data-whatever');
+            var URL = $("#jourLink").attr("href").replace("--IdCompteur", IdCompteur);
+            $("#jourLink").attr("href", URL);
+        });
+
+        $('.moisClass').click(function () {
+            var $button = $(this);
+            var IdCompteur = $button.attr('data-whatever');
+            var URL = $("#moisLink").attr("href").replace("--IdCompteur", IdCompteur);
+            $("#moisLink").attr("href", URL);
+        });
+
+        $("#anneeLink").attr("href", URL); $('.anneeClass').click(function () {
+            var $button = $(this);
+            var IdCompteur = $button.attr('data-whatever');
+            var URL = $("#anneeLink").attr("href").replace("--IdCompteur", IdCompteur);
+            $("#anneeLink").attr("href", URL);
+        });
+    </script>
+    <style>
+        .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
+            padding-right: 17px;
+        }
+    </style>
+
+    <div class="bd-example">
+        <div class="modal fade" id="Jour" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" style="margin: 100px -250px; padding: 0;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="exampleModalLabel">Choisir une date</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="day" class="form-control-label">Jour</label>
+                                <input type="date" class="form-control" id="day">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        @Html.ActionLink("Visualiser", "CourbeJournaliere", "Consommations", new { id = @Html.Raw("--IdCompteur") }, new { @id = "jourLink", @class = "btn btn-primary jourLink" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bd-example">
+        <div class="modal fade" id="Mois" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" style="margin: 100px -250px; padding: 0;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="Mois">Choisir une date</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="month" class="form-control-label">Mois</label>
+                                <input type="month" class="form-control" id="month">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        @Html.ActionLink("Visualiser", "CourbeMensuelle", "Consommations", new { id = @Html.Raw("--IdCompteur") }, new { @id = "moisLink", @class = "btn btn-primary moisLink" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bd-example">
+        <div class="modal fade" id="Annee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" style="margin: 100px -250px; padding: 0;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="exampleModalLabel">Choisir une date</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="yearpicker" class="form-control-label">Année</label>
+                                <select name="yearpicker" id="yearpicker"></select>
+                                <script>
+                                    for (i = new Date().getFullYear() ; i > 1900; i--) {
+                                        $('#yearpicker').append($('<option />').val(i).html(i));
+                                    }
+                                </script>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        @Html.ActionLink("Visualiser", "CourbeAnnuelle", "Consommations", new { id = @Html.Raw("--IdCompteur") }, new { @id = "anneeLink", @class = "btn btn-primary anneeLink" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    $('#jourLink').click(function (event) {
+        event.preventDefault()
+        var URL = $("#jourLink").attr("href");
+        var Date = $("#day").val().split("-");
+        URL = URL + "?date=" + Date[0] + "-" + Date[1] + "-" + Date[2];
+        window.location.href = URL;
+    });
+
+    $('#moisLink').click(function (event) {
+        event.preventDefault()
+        var URL = $("#moisLink").attr("href");
+        var Date = $("#month").val().split("-");
+        URL = URL + "?mois=" + Date[0] + "-" + Date[1];
+        window.location.href = URL;
+    });
+
+    $('#anneeLink').click(function (event) {
+        event.preventDefault()
+        var URL = $("#anneeLink").attr("href");
+        var Date = $("#yearpicker").val();
+        URL = URL + "?annee=" + Date;
+        window.location.href = URL;
+    });
+</script>
+
+
+@Html.ActionLink("Retour à la liste des compteurs", "Index", "Compteurs", new { @class = "btn btn-default" })
+<br />

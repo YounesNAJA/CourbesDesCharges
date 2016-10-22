@@ -1,0 +1,75 @@
+﻿@model IEnumerable<CourbesCharge.Models.Installation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section OptCSS {
+    <link href="@Url.Content("~/Content/Datatables/datatables.css")" rel="stylesheet" type="text/css" />
+}
+
+@section OptJS
+{
+    @Scripts.Render("~/Content/Datatables/datatables.js")
+}
+
+<br />
+<h2>Liste des installations</h2>
+<p class="lead">Toutes les installations effectuées par l'ONE à des clients</p>
+<br />
+
+<p>
+    @Html.ActionLink("Ajouter une nouvelle installation", "Create")
+</p>
+<table id="Table" class="table display">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.DateAmenagement)*@
+                Date d'aménagement
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compteur.Marque)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Contrat.ReferenceContrat)*@
+                Référence du contrat
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAmenagement)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Compteur.Marque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contrat.ReferenceContrat)
+                </td>
+                <td align="right">
+                    @Html.ActionLink("Modifier", "Edit", new { id = item.IdInstallation }, new { @class = "btn btn-warning" }) |
+                    @*@Html.ActionLink("Détails", "Details", new { id = item.IdInstallation }, new { @class = "btn btn-info" }) |*@
+                    @Html.ActionLink("Retirer l'installation", "Delete", new { id = item.IdInstallation }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function () {
+        $('#Table').DataTable();
+    });
+</script>

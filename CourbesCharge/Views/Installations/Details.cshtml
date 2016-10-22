@@ -1,0 +1,51 @@
+﻿@model CourbesCharge.Models.Installation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Installation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAmenagement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAmenagement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Compteur.Marque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compteur.Marque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contrat.ReferenceContrat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contrat.ReferenceContrat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdInstallation }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

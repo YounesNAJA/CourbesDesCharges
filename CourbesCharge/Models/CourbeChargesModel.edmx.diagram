@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="787737915f914b03977ef476605fdf6b" Name="Diagram1">
+        <EntityTypeShape EntityType="CourbeChargeModel.CategorieClient" Width="1.5" PointX="16.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourbeChargeModel.Client" Width="1.5" PointX="11.875" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourbeChargeModel.Compteur" Width="1.5" PointX="3.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourbeChargeModel.Consommation" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourbeChargeModel.Contrat" Width="1.5" PointX="9.125" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourbeChargeModel.Installation" Width="1.5" PointX="6.625" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CourbeChargeModel.Utilisateur" Width="1.5" PointX="2.875" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="CourbeChargeModel.FK_Client_IdCategorie" ManuallyRouted="false" />
+        <AssociationConnector Association="CourbeChargeModel.FK_Contrat_IdClient" ManuallyRouted="false" />
+        <AssociationConnector Association="CourbeChargeModel.FK_Consommation_IdCcompteur" ManuallyRouted="false" />
+        <AssociationConnector Association="CourbeChargeModel.FK_Installation_IdCompteur" ManuallyRouted="false" />
+        <AssociationConnector Association="CourbeChargeModel.FK_Installation_IdContrat" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

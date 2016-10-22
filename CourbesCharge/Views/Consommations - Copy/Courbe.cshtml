@@ -1,0 +1,95 @@
+﻿@model IEnumerable<CourbesCharge.Models.Consommation>
+
+@{
+    ViewBag.Title = "Courbe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Courbe</h2>
+<hr />
+<br />
+<div class="form-group">
+    <label class="control-label col-md-2" for="Client">Client</label>
+    <div class="col-md-10">
+        <select id="Client" class="form-control valid">
+            @foreach (var Client in ViewBag.Clients)
+            {
+                <option value="@Client.Nom">@Client.IdClient</option>
+            }
+        </select>
+    </div>
+</div>
+<br />
+<br />
+<div class="form-group">
+    <label class="control-label col-md-2" for="Compteur">Compteur</label>
+    <div class="col-md-10" id="CompteurClient">
+        @foreach (var Client in ViewBag.Clients)
+            {
+            <option value="@Client.Nom">@Client.IdClient</option>
+        }
+    </div>
+</div>
+<br />
+<br />
+<div class="form-group">
+    <label class="control-label col-md-2" for="TypeCourbe">Compteur</label>
+    <div class="col-md-10">
+        <select id="TypeCourbe" class="form-control valid">
+            <option value="J">Journalière</option>
+            <option value="M">Mensuelle</option>
+            <option value="A">Annuelle</option>
+        </select>
+    </div>
+</div>
+<br />
+<br />
+@*<div class="form-group col-md-6">
+    Année
+    <label class="control-label col-md-1" for="annee">Année</label>
+    <div class="col-md-3">
+        <select id="annee" class="form-control valid">
+            @for (int i = 1900; i <= 2016; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+
+    Mois
+    <label class="control-label col-md-1" for="mois">Mois</label>
+    <div class="col-md-3">
+        @{
+            IDictionary<string, string> Mois = new Dictionary<string, string>();
+            Mois["1"] = "Janvier";
+            Mois["2"] = "Février";
+            Mois["3"] = "Mars";
+            Mois["4"] = "Avril";
+            Mois["5"] = "Mai";
+            Mois["6"] = "Juin";
+            Mois["7"] = "Juillet";
+            Mois["8"] = "Aout";
+            Mois["9"] = "Septembre";
+            Mois["10"] = "Octobre";
+            Mois["11"] = "Novembre";
+            Mois["12"] = "Decembre";
+        }
+        <select id="mois" class="form-control valid">
+            @foreach (var mois in Mois)
+            {
+                <option value="@mois.Value">@mois.Key</option>
+            }
+        </select>
+    </div>
+
+    Jour
+    <label class="control-label col-1" for="jour">Jour</label>
+    <div class="col-md-3">
+        <select id="jour" class="form-control valid">
+            @for (int i = 1; i <= 31; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+</div>*@

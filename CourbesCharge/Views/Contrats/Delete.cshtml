@@ -1,0 +1,63 @@
+﻿@model CourbesCharge.Models.Contrat
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="alert alert-danger" role="alert">
+    <h2>Suppression du contrat : @Html.DisplayFor(Model => Model.ReferenceContrat)</h2>
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>Etes vous sûr de bien vouloir supprimer ce contrat ?
+</div>
+<div>
+    <h4>Contrat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.DateContrat)*@
+            Date du contrat
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateContrat)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ReferenceContrat)*@
+            Code référence du contrat
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReferenceContrat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Client.Nom)*@
+            Client concerné
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.Nom)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Retour à la liste des contrats", "Index", "", new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

@@ -1,0 +1,28 @@
+﻿@model CourbesCharge.Models.Consommation
+
+@{
+    ViewBag.Title = "ShowCurve";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowCurve</h2>
+
+<table>
+    <tr>
+        <th>Numero du Compteur</th>
+        <th>Date</th>
+        <th>Intervalle de calcul</th>
+        <th>Puissance active</th>
+        <th>Puissance Reactive</th>
+    </tr>
+    @foreach (var conso in ViewBag.ListConsommations)
+    {
+        <tr>
+            <td>@conso.IdCompteur</td>
+            <td>@conso.DateConsommation</td>
+            <td>@conso.IntervalleCalcul</td>
+            <td>@conso.PuissanceActive</td>
+            <td>@conso.PuissanceReactive</td>
+        </tr>
+    }
+</table>

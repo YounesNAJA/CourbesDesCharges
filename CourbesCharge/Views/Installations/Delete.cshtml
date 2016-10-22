@@ -1,0 +1,62 @@
+﻿@model CourbesCharge.Models.Installation
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="alert alert-danger" role="alert">
+    <h2>Suppression de l'installation</h2>
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>Etes vous sûr de bien vouloir retirer cette installation ?
+</div>
+<div>
+    <h4>Détails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.DateAmenagement)*@
+            Date d'aménagement
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAmenagement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Compteur.Marque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compteur.Marque)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Contrat.ReferenceContrat)*@
+            Référence du contrat
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contrat.ReferenceContrat)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Retour à la liste des installations", "Index", "", new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

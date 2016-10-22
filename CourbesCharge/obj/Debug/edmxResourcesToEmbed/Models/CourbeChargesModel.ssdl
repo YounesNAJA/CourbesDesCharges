@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CourbeChargeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CategorieClient">
+    <Key>
+      <PropertyRef Name="IdCategorie" />
+    </Key>
+    <Property Name="IdCategorie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomCategorie" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="text" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="IdClient" />
+    </Key>
+    <Property Name="IdClient" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Representant" Type="varchar" MaxLength="50" />
+    <Property Name="Adresse" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Siteweb" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="text" />
+    <Property Name="ClientDepuis" Type="datetime" />
+    <Property Name="IdCategorie" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Compteur">
+    <Key>
+      <PropertyRef Name="IdCompteur" />
+    </Key>
+    <Property Name="IdCompteur" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Marque" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Serie" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="text" />
+  </EntityType>
+  <EntityType Name="Consommation">
+    <Key>
+      <PropertyRef Name="IdConsommation" />
+    </Key>
+    <Property Name="IdConsommation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateConsommation" Type="datetime" Nullable="false" />
+    <Property Name="IntervalleCalcul" Type="int" Nullable="false" />
+    <Property Name="PuissanceActive" Type="float" Nullable="false" />
+    <Property Name="PuissanceReactive" Type="float" Nullable="false" />
+    <Property Name="IdCompteur" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contrat">
+    <Key>
+      <PropertyRef Name="IdContrat" />
+    </Key>
+    <Property Name="IdContrat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateContrat" Type="date" Nullable="false" />
+    <Property Name="ReferenceContrat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="text" />
+    <Property Name="IdClient" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Installation">
+    <Key>
+      <PropertyRef Name="IdInstallation" />
+    </Key>
+    <Property Name="IdInstallation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateAmenagement" Type="date" Nullable="false" />
+    <Property Name="Adresse" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdCompteur" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdContrat" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="IdUtilisateur" />
+    </Key>
+    <Property Name="IdUtilisateur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Client_IdCategorie">
+    <End Role="CategorieClient" Type="Self.CategorieClient" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategorieClient">
+        <PropertyRef Name="IdCategorie" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="IdCategorie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consommation_IdCcompteur">
+    <End Role="Compteur" Type="Self.Compteur" Multiplicity="1" />
+    <End Role="Consommation" Type="Self.Consommation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compteur">
+        <PropertyRef Name="IdCompteur" />
+      </Principal>
+      <Dependent Role="Consommation">
+        <PropertyRef Name="IdCompteur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contrat_IdClient">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Contrat" Type="Self.Contrat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="Contrat">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installation_IdCompteur">
+    <End Role="Compteur" Type="Self.Compteur" Multiplicity="1" />
+    <End Role="Installation" Type="Self.Installation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compteur">
+        <PropertyRef Name="IdCompteur" />
+      </Principal>
+      <Dependent Role="Installation">
+        <PropertyRef Name="IdCompteur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installation_IdContrat">
+    <End Role="Contrat" Type="Self.Contrat" Multiplicity="1" />
+    <End Role="Installation" Type="Self.Installation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contrat">
+        <PropertyRef Name="IdContrat" />
+      </Principal>
+      <Dependent Role="Installation">
+        <PropertyRef Name="IdContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CourbeChargeModelStoreContainer">
+    <EntitySet Name="CategorieClient" EntityType="Self.CategorieClient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Compteur" EntityType="Self.Compteur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consommation" EntityType="Self.Consommation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contrat" EntityType="Self.Contrat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Installation" EntityType="Self.Installation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Client_IdCategorie" Association="Self.FK_Client_IdCategorie">
+      <End Role="CategorieClient" EntitySet="CategorieClient" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consommation_IdCcompteur" Association="Self.FK_Consommation_IdCcompteur">
+      <End Role="Compteur" EntitySet="Compteur" />
+      <End Role="Consommation" EntitySet="Consommation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contrat_IdClient" Association="Self.FK_Contrat_IdClient">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Contrat" EntitySet="Contrat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installation_IdCompteur" Association="Self.FK_Installation_IdCompteur">
+      <End Role="Compteur" EntitySet="Compteur" />
+      <End Role="Installation" EntitySet="Installation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installation_IdContrat" Association="Self.FK_Installation_IdContrat">
+      <End Role="Contrat" EntitySet="Contrat" />
+      <End Role="Installation" EntitySet="Installation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

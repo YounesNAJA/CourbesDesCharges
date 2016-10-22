@@ -1,0 +1,269 @@
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\ApplicationInsights.config
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\csc.exe
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\vbc.exe
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\VBCSCompiler.exe
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\CourbesCharge.dll.config
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\CourbesCharge.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\CourbesCharge.pdb
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Antlr3.Runtime.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\EntityFramework.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\EntityFramework.SqlServer.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\EPPlus.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AI.Web.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Newtonsoft.Json.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Owin.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Net.Http.Formatting.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Helpers.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Http.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Http.WebHost.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Mvc.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Optimization.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Razor.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.WebPages.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.WebPages.Razor.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\WebGrease.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\EPPlus.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AI.Web.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Helpers.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Mvc.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Optimization.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Razor.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.WebPages.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.WebPages.Razor.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Antlr3.Runtime.pdb
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Newtonsoft.Json.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Net.Http.Formatting.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Http.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\System.Web.Http.WebHost.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\EntityFramework.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\EntityFramework.SqlServer.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\obj\Debug\CourbesCharge.dll
+C:\Users\Younes\documents\visual studio 2015\Projects\CourbesCharge\CourbesCharge\obj\Debug\CourbesCharge.pdb
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\ApplicationInsights.config
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\csc.exe
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\vbc.exe
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\VBCSCompiler.exe
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\CourbesCharge.dll.config
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\CourbesCharge.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\CourbesCharge.pdb
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Antlr3.Runtime.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\EntityFramework.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\EntityFramework.SqlServer.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\EPPlus.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AI.Web.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Newtonsoft.Json.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Owin.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Net.Http.Formatting.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Helpers.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Http.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Http.WebHost.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Mvc.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Optimization.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Razor.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.WebPages.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.WebPages.Razor.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\WebGrease.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\EPPlus.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AI.Web.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Helpers.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Mvc.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Optimization.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Razor.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.WebPages.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.WebPages.Razor.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Antlr3.Runtime.pdb
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Newtonsoft.Json.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Net.Http.Formatting.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Http.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\System.Web.Http.WebHost.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\EntityFramework.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\EntityFramework.SqlServer.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\obj\Debug\CourbesCharge.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\obj\Debug\CourbesCharge.pdb
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Copie\CourbesCharge\obj\Debug\CourbesCharge.csprojResolveAssemblyReference.cache
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\ApplicationInsights.config
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\csc.exe
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\vbc.exe
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\VBCSCompiler.exe
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\CourbesCharge.dll.config
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\CourbesCharge.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\CourbesCharge.pdb
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Antlr3.Runtime.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\EntityFramework.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\EntityFramework.SqlServer.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\EPPlus.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AI.Web.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Newtonsoft.Json.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Owin.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Net.Http.Formatting.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Helpers.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Http.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Http.WebHost.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Mvc.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Optimization.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Razor.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.WebPages.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.WebPages.Razor.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\WebGrease.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\EPPlus.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AI.Web.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Helpers.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Mvc.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Optimization.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Razor.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.WebPages.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.WebPages.Razor.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Antlr3.Runtime.pdb
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Newtonsoft.Json.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Net.Http.Formatting.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Http.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\System.Web.Http.WebHost.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\EntityFramework.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\EntityFramework.SqlServer.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\obj\Debug\CourbesCharge.dll
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\obj\Debug\CourbesCharge.pdb
+C:\Users\Younes\Documents\Visual Studio 2015\Projects\CourbesCharge - Final\CourbesCharge\obj\Debug\CourbesCharge.csprojResolveAssemblyReference.cache

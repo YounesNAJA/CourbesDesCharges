@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CourbeChargeModelStoreContainer" CdmEntityContainer="CourbeChargeEntities">
+    <EntitySetMapping Name="CategorieClient">
+      <EntityTypeMapping TypeName="CourbeChargeModel.CategorieClient">
+        <MappingFragment StoreEntitySet="CategorieClient">
+          <ScalarProperty Name="IdCategorie" ColumnName="IdCategorie" />
+          <ScalarProperty Name="NomCategorie" ColumnName="NomCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="CourbeChargeModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="IdCategorie" ColumnName="IdCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compteur">
+      <EntityTypeMapping TypeName="CourbeChargeModel.Compteur">
+        <MappingFragment StoreEntitySet="Compteur">
+          <ScalarProperty Name="IdCompteur" ColumnName="IdCompteur" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consommation">
+      <EntityTypeMapping TypeName="CourbeChargeModel.Consommation">
+        <MappingFragment StoreEntitySet="Consommation">
+          <ScalarProperty Name="IdConsommation" ColumnName="IdConsommation" />
+          <ScalarProperty Name="DateConsommation" ColumnName="DateConsommation" />
+          <ScalarProperty Name="IntervalleCalcul" ColumnName="IntervalleCalcul" />
+          <ScalarProperty Name="PuissanceActive" ColumnName="PuissanceActive" />
+          <ScalarProperty Name="PuissanceReactive" ColumnName="PuissanceReactive" />
+          <ScalarProperty Name="IdCompteur" ColumnName="IdCompteur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contrat">
+      <EntityTypeMapping TypeName="CourbeChargeModel.Contrat">
+        <MappingFragment StoreEntitySet="Contrat">
+          <ScalarProperty Name="IdContrat" ColumnName="IdContrat" />
+          <ScalarProperty Name="DateContrat" ColumnName="DateContrat" />
+          <ScalarProperty Name="ReferenceContrat" ColumnName="ReferenceContrat" />
+          <ScalarProperty Name="IdInstallation" ColumnName="IdInstallation" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Installation">
+      <EntityTypeMapping TypeName="CourbeChargeModel.Installation">
+        <MappingFragment StoreEntitySet="Installation">
+          <ScalarProperty Name="IdInstallation" ColumnName="IdInstallation" />
+          <ScalarProperty Name="DateAmenagement" ColumnName="DateAmenagement" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="IdCompteur" ColumnName="IdCompteur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilisateur">
+      <EntityTypeMapping TypeName="CourbeChargeModel.Utilisateur">
+        <MappingFragment StoreEntitySet="Utilisateur">
+          <ScalarProperty Name="IdUtilisateur" ColumnName="IdUtilisateur" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

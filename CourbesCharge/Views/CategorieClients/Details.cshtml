@@ -1,0 +1,26 @@
+﻿@model CourbesCharge.Models.CategorieClient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CategorieClient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomCategorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomCategorie)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCategorie }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

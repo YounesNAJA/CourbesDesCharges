@@ -1,0 +1,295 @@
+﻿@model IEnumerable<CourbesCharge.Models.Consommation>
+
+@{
+    ViewBag.Title = "Courbe de charge journalière";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section OptCSS {
+    <link href="@Url.Content("~/Content/Datatables/datatables.css")" rel="stylesheet" type="text/css" />
+}
+
+@section OptJS
+{
+    @Scripts.Render("~/Content/Datatables/datatables.js")
+}
+
+<br />
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Informations</h3>
+    </div>
+    <div class="panel-body">
+        <p>La courbe en bas représente  la puissance active et réactive tout au long de la journée</p>
+        <p>Les tableaux en bas du graphe les valeurs maximales et minimales des puissances actives et réactives</p>
+    </div>
+</div>
+
+<br />
+
+
+<br />
+<h1 align="center">Courbe de charge journalière pour le client : @ViewBag.Client.Nom</h1>
+<h3 align="center">Du : @ViewBag.Date</h3>
+<hr/>
+<br />
+<div id="container" style="width:100%; height:400px;">
+
+</div>
+
+<script>
+    $(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'line'
+            },
+            title: {
+                text: 'Variation journalière des puissances actives et réactives'
+            },
+            xAxis: {
+                @{ 
+                    int IdLast = Model.Last().IdConsommation;
+                    string Consotime;
+                    // string quoteE = "'";
+                    string quote = "'";
+                    // string Puissances;
+                    string PAct;
+                    string PReact;
+                    // List<string[]> PActArray = new List<string[]>();
+                    // List<string[]> PReactArray = new List<string[]>();
+                }
+                categories: [@foreach (var conso in Model)
+                             {
+                                 if(conso.IdConsommation == IdLast)
+                                 {
+                                     Consotime = quote + conso.DateConsommation.ToString("HH:mm") + quote;
+                                 } else
+                                 {
+                                     Consotime = quote + conso.DateConsommation.ToString("HH:mm") + quote + ", ";
+                                 }
+                                 @Html.Raw(Consotime);
+                             }]
+            },
+            yAxis: {
+                title: {
+                    text: 'Puissances'
+                }
+            },
+            series: [{
+                name: 'Puissance réactive',
+                data: [@foreach (var conso in Model)
+                       {
+                           // PReactArray.Add(new string[] { conso.DateConsommation.ToString(), conso.PuissanceReactive.ToString()});
+                           if(conso.IdConsommation == IdLast)
+                           {
+                               PAct = conso.PuissanceReactive.ToString().Replace(',', '.');
+                           } else
+                           {
+                               PAct = conso.PuissanceReactive.ToString().Replace(',', '.') + ", ";
+                           }
+                           @Html.Raw(PAct);
+                       }]
+            }, {
+                name: 'Puissance active',
+                data: [@foreach (var conso in Model)
+                       {
+                           // PActArray.Add(new string[] { conso.DateConsommation.ToString(), conso.PuissanceActive.ToString() });
+                           if (conso.IdConsommation == IdLast)
+                           {
+                               PReact = conso.PuissanceActive.ToString().Replace(',', '.');
+                           } else
+                           {
+                               PReact = conso.PuissanceActive.ToString().Replace(',', '.') + ", ";
+                           }
+                           @Html.Raw(PReact);
+                       }]
+            }]
+        });
+    });
+</script>
+
+<hr/>
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#paTab">Puissance active</a></li>
+    <li><a data-toggle="tab" href="#prTab">Puissance réactive</a></li>
+    <li><a data-toggle="tab" href="#clientD">Détails sur le client</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="paTab" class="tab-pane fade in active">
+        <table id="Table" class="table table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        Valeur
+                    </th>
+                    <th>
+                        Heure de l'enregistrement
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="success">
+                    <td>
+                        Valeur maximale (+)
+                    </td>
+                    <td>
+                        @ViewBag.MaxPA.PuissanceActive
+                    </td>
+                    <td>
+                        @ViewBag.MaxPA.DateConsommation
+                    </td>
+                </tr>
+                <tr class="danger">
+                    <td>
+                        Valeur minimale (-)
+                    </td>
+                    <td>
+                        @ViewBag.MinPA.PuissanceActive
+                    </td>
+                    <td>
+                        @ViewBag.MinPA.DateConsommation
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="prTab" class="tab-pane fade">
+        <table id="TableR" class="table table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th>
+                    Valeur
+                </th>
+                <th>
+                    Heure de l'enregistrement
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="success">
+                <td>
+                    Valeur maximale (+)
+                </td>
+                <td>
+                    @ViewBag.MaxPR.PuissanceReactive
+                </td>
+                <td>
+                    @ViewBag.MaxPR.DateConsommation
+                </td>
+            </tr>
+            <tr class="danger">
+                <td>
+                    Valeur minimale (-)
+                </td>
+                <td>
+                    @ViewBag.MinPR.PuissanceReactive
+                </td>
+                <td>
+                    @ViewBag.MinPR.DateConsommation
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="clientD" class="tab-pane fade">
+        <table id="TableC" class="table table-hover">
+            <thead>
+            <tr class="info">
+                <th>
+                    Nom du client
+                </th>
+                <th>
+                    Adresse
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Téléphone
+                </th>
+                <th>
+                    Site web
+                </th>
+                <th>
+                    Nom du représentant
+                </th> 
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    @ViewBag.Client.Nom
+                </td>
+                <td>
+                    @ViewBag.Client.Adresse
+                </td>
+                <td>
+                    @ViewBag.Client.Email
+                </td>
+                <td>
+                    @ViewBag.Client.Telephone
+                </td>
+                <td>
+                    @ViewBag.Client.Siteweb
+                </td>
+                <td>
+                    @ViewBag.Client.Representant
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table id="TableC" class="table table-hover">
+            <thead>
+            <tr class="info">
+                <th>
+                    Date du contrat
+                </th>
+                <th>
+                    Référence du contrat
+                </th>
+                <th>
+                    Date aménagement du compteur
+                </th>
+                <th>
+                    Localité
+                </th>
+                <th>
+                    Marque du compteur
+                </th>
+                <th>
+                    Série
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @ViewBag.ClientInfo["Date du Contrat"]
+                    </td>
+                    <td>
+                        @ViewBag.ClientInfo["Reference Contrat"]
+                    </td>
+                    <td>
+                        @ViewBag.ClientInfo["Date Amenag"]
+                    </td>
+                    <td>
+                        @ViewBag.ClientInfo["Localite"]
+                    </td>
+                    <td>
+                        @ViewBag.ClientInfo["Marque"]
+                    </td>
+                    <td>
+                        @ViewBag.ClientInfo["Serie"]
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@Html.ActionLink("Retour", "Courbes", "Compteurs", new { IdCompteur = ViewBag.IdCompteur }, new { @class = "btn btn-default" })
+<br/>

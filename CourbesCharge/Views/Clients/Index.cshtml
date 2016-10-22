@@ -1,0 +1,123 @@
+﻿@model IEnumerable<CourbesCharge.Models.Client>
+
+@{
+    ViewBag.Title = "Gestion des clients";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section OptCSS {
+    <link href="@Url.Content("~/Content/Datatables/datatables.css")" rel="stylesheet" type="text/css" />
+}
+
+@section OptJS
+{
+    @Scripts.Render("~/Content/Datatables/datatables.js")
+}
+
+<br />
+<h2>Liste des clients</h2>
+<p class="lead">Tous les clients ayant un compteur</p>
+<br />
+<table id="Table" class="table display">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Representant)*@
+            Représentant
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Telephone)*@
+            Téléphone
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Siteweb)*@
+            Site web
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.ClientDepuis)*@
+            Client depuis
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CategorieClient.NomCategorie)*@
+            Catégorie du client
+        </th>
+        <th></th>
+    </tr>
+    @*<tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+    </tr>*@
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Representant)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telephone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Siteweb)
+                </td>
+                <td></td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientDepuis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategorieClient.NomCategorie)
+                </td>
+                <td colspan="3" align="right">
+                    @*@Html.ActionLink("Modifier", "Edit", new { id = item.IdClient }, new { @class = "btn btn-warning" }) |*@
+                    @Html.ActionLink("Détails", "Details", new { id = item.IdClient }, new { @class = "btn btn-info" })
+                    @*@Html.ActionLink("Supprimer", "Delete", new { id = item.IdClient }, new { @class = "btn btn-danger" })*@
+                </td>
+            </tr>
+            @*<tr>
+                <td colspan="2">
+                    @Html.DisplayFor(modelItem => item.Adresse)
+                </td>
+                <td colspan="3">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td colspan="3" align="right">
+                    @Html.ActionLink("Modifier", "Edit", new {id = item.IdClient}, new {@class = "btn btn-warning"}) |
+                    @Html.ActionLink("Détails", "Details", new {id = item.IdClient}, new {@class = "btn btn-info"}) |
+                    @Html.ActionLink("Supprimer", "Delete", new {id = item.IdClient}, new {@class = "btn btn-danger"})
+                </td>
+            </tr>*@
+        }
+    </tbody>
+
+</table>
+
+<p>
+    @Html.ActionLink("Creer un nouveau client", "Create")
+</p>
+
+<script>
+    $(document).ready(function () {
+        $('#Table').DataTable({
+            "autoWidth": true,
+             "searching": true
+        });
+    });
+</script>

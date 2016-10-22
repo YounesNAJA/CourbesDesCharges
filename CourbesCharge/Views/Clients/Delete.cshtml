@@ -1,0 +1,105 @@
+﻿@model CourbesCharge.Models.Client
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="alert alert-danger" role="alert">
+    <h2>Suppression du client</h2>
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>Etes vous sûr de bien vouloir supprimer ce client ?
+</div>
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Representant)*@
+            Représentant
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Representant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Telephone)*@
+            Téléphone
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Siteweb)*@
+            Site web
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Siteweb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ClientDepuis)*@
+            Client depuis
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientDepuis)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.CategorieClient.NomCategorie)*@
+            Catégorie client
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategorieClient.NomCategorie)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Retour à la liste des clients", "Index", "", new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

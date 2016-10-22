@@ -1,0 +1,35 @@
+﻿@model CourbesCharge.Models.CategorieClient
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<br/>
+<div class="alert alert-danger" role="alert">
+    <h2>Suppression de la catégorie</h2>
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>Etes vous sûr de bien vouloir supprimer cette catégorie ?
+</div>
+<div>
+    <h4>Détails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nom de la catégorie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomCategorie)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+            @Html.ActionLink("Retour à la liste des catégories", "Index", "", new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

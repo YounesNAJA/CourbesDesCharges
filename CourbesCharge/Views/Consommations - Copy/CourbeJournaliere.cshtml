@@ -1,0 +1,106 @@
+﻿@model IEnumerable<CourbesCharge.Models.Consommation>
+
+@{
+    ViewBag.Title = "TestCharts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TestCharts</h2>
+
+<div id="container" style="width:100%; height:400px;">
+
+</div>
+
+<script>
+    $(function () {
+        $('#container').highcharts({
+
+        chart: {
+            type: 'line'
+            },
+            title: {
+            text: 'Variation journalière des puissances actives et réactives'
+            },
+            xAxis: {
+                @{ 
+                    int IdLast = Model.Last().IdConsommation;
+                    string Consotime;
+                    // string quoteE = "'";
+                    string quote = "'";
+                    // string Puissances;
+                    string PAct;
+                    string PReact;
+                }
+                categories: [@foreach (var conso in Model)
+                {
+                    if(conso.IdConsommation == IdLast)
+                    {
+                        Consotime = quote + conso.DateConsommation.ToString("HH:mm") + quote;
+                    } else
+                    {
+                        Consotime = quote + conso.DateConsommation.ToString("HH:mm") + quote + ", ";
+                    }
+                        @Html.Raw(Consotime);
+                    }]
+            },
+            yAxis: {
+            title: {
+                text: 'Puissances'
+                }
+            },
+            series: [{
+            name: 'Puissance réactive',
+            data: [@foreach (var conso in Model)
+            {
+                if(conso.IdConsommation == IdLast)
+                {
+                    PAct = conso.PuissanceActive.ToString().Replace(',', '.');
+                } else
+                {
+                    PAct = conso.PuissanceActive.ToString().Replace(',', '.') + ", ";
+                }
+                        @Html.Raw(PAct);
+                }]
+            }, {
+            name: 'Puissance active',
+            data: [@foreach (var conso in Model)
+            {
+                if(conso.IdConsommation == IdLast)
+                {
+                    PReact = conso.PuissanceReactive.ToString().Replace(',', '.');
+                } else
+                {
+                    PReact = conso.PuissanceReactive.ToString().Replace(',', '.') + ", ";
+                }
+                        @Html.Raw(PReact);
+                }]
+            }]
+        });
+    });
+</script>
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCompteur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateConsommation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntervalleCalcul)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PuissanceActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PuissanceReactive)
+            </td>
+        </tr>
+    }
+</table>
+
+<h1>
+    @ViewBag.Date
+</h1>

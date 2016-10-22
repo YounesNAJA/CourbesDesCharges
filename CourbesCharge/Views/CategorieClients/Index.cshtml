@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CourbesCharge.Models.CategorieClient>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<h2>Liste des catégories clients disponibles</h2>
+<br />
+
+<p>
+    @Html.ActionLink("Ajouter une nouvelle catégorie", "Create")
+</p>
+
+<table id="Table" class="table display">
+    <thead>
+        <tr>
+            <th>
+                Nom de la catégorie
+            </th>
+            <th id="actions">
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomCategorie)
+                </td>
+                <td>
+                    @Html.ActionLink("Modifier", "Edit", new { id = item.IdCategorie }, new { @class = "btn btn-warning"}) |
+                    @*@Html.ActionLink("Détails", "Details", new { id = item.IdCategorie }, new { @class = "btn btn-info" }) |*@
+                    @Html.ActionLink("Supprimer", "Delete", new { id = item.IdCategorie }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+        $(document).ready(function () {
+            $('#Table').DataTable();
+        });
+</script>
